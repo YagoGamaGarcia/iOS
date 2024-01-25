@@ -1,0 +1,35 @@
+func gemSide() {
+    if isBlocked && isOnGem {
+        turnRight()        
+        collectGem()     
+    } else if isOnGem {
+        collectGem()        
+    }
+}
+
+func blockSide() {
+    if isBlockedRight && isBlocked {
+        turnLeft()        
+    } else if isBlockedLeft && isBlocked {
+        turnRight()        
+    } else if isBlocked {
+        turnLeft()        
+    }
+}
+
+func toggleSide() {
+    if isBlocked && isOnClosedSwitch {
+        toggleSwitch()
+        turnRight()        
+    } else if isOnClosedSwitch {
+        toggleSwitch()        
+    }
+}
+
+while !isOnOpenSwitch {
+    gemSide()
+    blockSide()
+    toggleSide()
+    moveForward()
+    
+}
