@@ -1,0 +1,26 @@
+func gemOrToggle() {
+    if isOnClosedSwitch {
+        toggleSwitch()        
+    } else if isOnGem {
+        collectGem()        
+    }
+    
+}
+
+func solveLine() {
+    moveForward()
+    while !isBlocked {
+        gemOrToggle()
+        moveForward()        
+    }
+}
+solveLine()
+turnRight()
+moveForward()
+turnRight()
+solveLine()
+turnLeft()
+moveForward()
+turnLeft()
+solveLine()
+
