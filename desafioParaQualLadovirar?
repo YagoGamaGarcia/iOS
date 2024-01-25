@@ -1,0 +1,15 @@
+func checkSide() {
+    if isOnClosedSwitch && isBlocked {
+        toggleSwitch()
+        turnLeft()        
+    } else if isOnClosedSwitch {
+        toggleSwitch() 
+        turnRight()        
+    }
+}
+
+while !isOnGem {
+    checkSide()
+    moveForward()   
+}
+collectGem()
