@@ -1,0 +1,9 @@
+while !isOnOpenSwitch {
+    while !isBlocked {
+        moveForward()
+    }
+    turnRight()    
+    if isOnClosedSwitch {
+        toggleSwitch()    
+    }
+}
