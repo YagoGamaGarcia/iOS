@@ -1,0 +1,33 @@
+var numberOfGem = 0
+var numberOfControll = 0
+
+func gemCollect() {
+    if isOnGem {
+        collectGem() 
+        numberOfGem = numberOfGem + 1
+    } else if isBlocked && isBlockedRight{
+        turnLeft()        
+    } else if isBlocked {
+        turnRight()        
+    }
+}
+
+func pressTheButton() {
+    if isOnClosedSwitch {
+        toggleSwitch()  
+        numberOfControll = numberOfControll + 1
+    } else if isBlocked && isBlockedRight {
+        turnLeft()        
+    } else if isBlocked {
+        turnRight()        
+    }
+    
+}
+while numberOfControll < 4 {
+    while numberOfGem < 3 {
+        moveForward()    
+        gemCollect()    
+    }
+    moveForward()    
+    pressTheButton()    
+}
