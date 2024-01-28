@@ -1,0 +1,32 @@
+var gemCount = 0
+
+
+
+func returnToCenter() {
+    if expert.isBlocked {
+        expert.turnLockDown() 
+        expert.turnRight()
+        expert.turnRight()
+               
+        
+    } else if expert.isBlockedLeft {
+        expert.moveForward()
+    } else {
+        expert.turnRight()
+        expert.moveForward()
+    }
+    
+}
+
+
+while gemCount != 6 {
+    if expert.isOnGem {
+    expert.collectGem()
+        gemCount += 1
+} else if expert.isBlocked {
+    expert.turnLockDown()    
+}
+    returnToCenter()
+}
+
+
