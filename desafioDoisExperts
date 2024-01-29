@@ -1,0 +1,28 @@
+let expertOne = Expert()
+let expertTwo = Expert()
+
+func moveToGem(times: Int) {
+    for i in 1 ... times {
+        if expertTwo.isOnGem {
+            expertTwo.collectGem()
+        } else {
+            expertTwo.moveForward()
+        }
+    }
+}
+
+
+world.place(expertOne, facing: north, atColumn: 0, row: 0)
+world.place(expertTwo, facing: north, atColumn: 0, row: 4)
+
+expertOne.collectGem()
+expertOne.turnRight()
+expertOne.move(distance: 3)
+expertOne.turnLeft()
+expertOne.turnLock(up: true, numberOfTimes: 2)
+expertTwo.turnLock(up: false, numberOfTimes: 1)
+expertOne.turnRight()
+expertOne.move(distance: 3)
+expertOne.turnLock(up: false, numberOfTimes: 2)
+expertTwo.turnRight()
+moveToGem(times: 7)
