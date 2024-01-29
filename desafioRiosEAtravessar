@@ -1,0 +1,19 @@
+let expert = Expert()
+world.place(expert, facing: south, atColumn: 1, row: 8)
+func moveAndCollect(times: Int) {
+    for i in 1 ... times {
+        if expert.isOnGem {
+            expert.collectGem()
+        } else {
+            expert.moveForward()
+        }
+    }
+}
+
+moveAndCollect(times: 7)
+expert.turnLock(up: false, numberOfTimes: 1)
+expert.turnLeft()
+moveAndCollect(times: 6)
+expert.turnLock(up: true, numberOfTimes: 1)
+expert.turnRight()
+moveAndCollect(times: 7)
